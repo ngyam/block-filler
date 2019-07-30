@@ -67,3 +67,5 @@ accounts.json
 test/
 contracts/
 migrations/
+
+deploytobalaba.js
