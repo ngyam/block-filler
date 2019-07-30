@@ -1,6 +1,6 @@
 {
   "name": "block-filler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple cl tool for spamming ethereum nodes with block filling transactions",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
