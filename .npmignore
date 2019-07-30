@@ -63,3 +63,7 @@ typings/
 from.json
 jobs.json
 accounts.json
+
+test/
+contracts/
+migrations/

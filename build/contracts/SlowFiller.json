@@ -1,0 +1,585 @@
+{
+  "contractName": "SlowFiller",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "loop",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.10+commit.5a6ea5b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"loop\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/aznagy/work/shenanigans/blockfill/contracts/SlowFiller.sol\":\"SlowFiller\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/aznagy/work/shenanigans/blockfill/contracts/SlowFiller.sol\":{\"keccak256\":\"0x1068000b18349d26fffabf3a9e60195d9725413de7606ad23cbb4ce9ac1bbeed\",\"urls\":[\"bzzr://05334a4ca3fa5790dcf5c43dd760db8957f82031c5313b59fb7412519c55b780\",\"dweb:/ipfs/QmW6siupKBeifgNTUeTmBNZW2jb4vFG9LLGx7Twj3GUMrv\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610116806100206000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063a92100cb14602d575b600080fd5b60336035565b005b60005a90505b60fa81111560de5760017effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80095060017effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80095060017effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80095060017effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8009505a9050603b565b5056fea265627a7a72305820259c259fb6c5117b233a4b55744bb64b626dce2d2f8d345e0f2a926a8d6f7fe464736f6c634300050a0032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063a92100cb14602d575b600080fd5b60336035565b005b60005a90505b60fa81111560de5760017effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80095060017effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80095060017effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80095060017effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8009505a9050603b565b5056fea265627a7a72305820259c259fb6c5117b233a4b55744bb64b626dce2d2f8d345e0f2a926a8d6f7fe464736f6c634300050a0032",
+  "sourceMap": "27:1240:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:1240:2;;;;;;;",
+  "deployedSourceMap": "27:1240:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:1240:2;;;;;;;;;;;;;;;;;;;58:1207;;;:::i;:::-;;;97:6;106:9;97:18;;126:1133;136:3;132:1;:7;126:1133;;;403:1;317:64;231;203:219;195:228;664:1;578:64;492;464:219;456:228;925:1;839:64;753;725:219;717:228;1186:1;1100:64;1014;986:219;978:228;1239:9;1235:13;;126:1133;;;58:1207;:::o",
+  "source": "pragma solidity ^0.5.10;\n\n\ncontract SlowFiller {\n    \n    function loop() public view {\n\n        uint g = gasleft();\n\n        while(g > 250) {\n            assembly{\n                pop(blockhash(balance(mulmod(\n                    0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff,\n                    0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff,\n                    1\n                ))))\n                pop(blockhash(balance(mulmod(\n                    0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff,\n                    0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff,\n                    1\n                ))))\n                pop(blockhash(balance(mulmod(\n                    0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff,\n                    0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff,\n                    1\n                ))))\n                pop(blockhash(balance(mulmod(\n                    0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff,\n                    0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff,\n                    1\n                ))))\n            }\n            g = gasleft();\n        }\n    }\n}\n",
+  "sourcePath": "/home/aznagy/work/shenanigans/blockfill/contracts/SlowFiller.sol",
+  "ast": {
+    "absolutePath": "/home/aznagy/work/shenanigans/blockfill/contracts/SlowFiller.sol",
+    "exportedSymbols": {
+      "SlowFiller": [
+        148
+      ]
+    },
+    "id": 149,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 127,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 148,
+        "linearizedBaseContracts": [
+          148
+        ],
+        "name": "SlowFiller",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 146,
+              "nodeType": "Block",
+              "src": "86:1179:2",
+              "statements": [
+                {
+                  "assignments": [
+                    131
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 131,
+                      "name": "g",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 146,
+                      "src": "97:6:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 130,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "97:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 134,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 132,
+                      "name": "gasleft",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 156,
+                      "src": "106:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_gasleft_view$__$returns$_t_uint256_$",
+                        "typeString": "function () view returns (uint256)"
+                      }
+                    },
+                    "id": 133,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "106:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "97:18:2"
+                },
+                {
+                  "body": {
+                    "id": 144,
+                    "nodeType": "Block",
+                    "src": "141:1118:2",
+                    "statements": [
+                      {
+                        "externalReferences": [],
+                        "id": 138,
+                        "nodeType": "InlineAssembly",
+                        "operations": "{\n    pop(blockhash(balance(mulmod(0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, 1))))\n    pop(blockhash(balance(mulmod(0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, 1))))\n    pop(blockhash(balance(mulmod(0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, 1))))\n    pop(blockhash(balance(mulmod(0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, 1))))\n}",
+                        "src": "155:1067:2"
+                      },
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 142,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 139,
+                            "name": "g",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 131,
+                            "src": "1235:1:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "arguments": [],
+                            "expression": {
+                              "argumentTypes": [],
+                              "id": 140,
+                              "name": "gasleft",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 156,
+                              "src": "1239:7:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_gasleft_view$__$returns$_t_uint256_$",
+                                "typeString": "function () view returns (uint256)"
+                              }
+                            },
+                            "id": 141,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1239:9:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "1235:13:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 143,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1235:13:2"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 137,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 135,
+                      "name": "g",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 131,
+                      "src": "132:1:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": ">",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "323530",
+                      "id": 136,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "136:3:2",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_250_by_1",
+                        "typeString": "int_const 250"
+                      },
+                      "value": "250"
+                    },
+                    "src": "132:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 145,
+                  "nodeType": "WhileStatement",
+                  "src": "126:1133:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 147,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "loop",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 128,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "71:2:2"
+            },
+            "returnParameters": {
+              "id": 129,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "86:0:2"
+            },
+            "scope": 148,
+            "src": "58:1207:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 149,
+        "src": "27:1240:2"
+      }
+    ],
+    "src": "0:1268:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/aznagy/work/shenanigans/blockfill/contracts/SlowFiller.sol",
+    "exportedSymbols": {
+      "SlowFiller": [
+        148
+      ]
+    },
+    "id": 149,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 127,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 148,
+        "linearizedBaseContracts": [
+          148
+        ],
+        "name": "SlowFiller",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 146,
+              "nodeType": "Block",
+              "src": "86:1179:2",
+              "statements": [
+                {
+                  "assignments": [
+                    131
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 131,
+                      "name": "g",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 146,
+                      "src": "97:6:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 130,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "97:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 134,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 132,
+                      "name": "gasleft",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 156,
+                      "src": "106:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_gasleft_view$__$returns$_t_uint256_$",
+                        "typeString": "function () view returns (uint256)"
+                      }
+                    },
+                    "id": 133,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "106:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "97:18:2"
+                },
+                {
+                  "body": {
+                    "id": 144,
+                    "nodeType": "Block",
+                    "src": "141:1118:2",
+                    "statements": [
+                      {
+                        "externalReferences": [],
+                        "id": 138,
+                        "nodeType": "InlineAssembly",
+                        "operations": "{\n    pop(blockhash(balance(mulmod(0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, 1))))\n    pop(blockhash(balance(mulmod(0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, 1))))\n    pop(blockhash(balance(mulmod(0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, 1))))\n    pop(blockhash(balance(mulmod(0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, 1))))\n}",
+                        "src": "155:1067:2"
+                      },
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 142,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 139,
+                            "name": "g",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 131,
+                            "src": "1235:1:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "arguments": [],
+                            "expression": {
+                              "argumentTypes": [],
+                              "id": 140,
+                              "name": "gasleft",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 156,
+                              "src": "1239:7:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_gasleft_view$__$returns$_t_uint256_$",
+                                "typeString": "function () view returns (uint256)"
+                              }
+                            },
+                            "id": 141,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1239:9:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "1235:13:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 143,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1235:13:2"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 137,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 135,
+                      "name": "g",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 131,
+                      "src": "132:1:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": ">",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "323530",
+                      "id": 136,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "136:3:2",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_250_by_1",
+                        "typeString": "int_const 250"
+                      },
+                      "value": "250"
+                    },
+                    "src": "132:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 145,
+                  "nodeType": "WhileStatement",
+                  "src": "126:1133:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 147,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "loop",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 128,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "71:2:2"
+            },
+            "returnParameters": {
+              "id": 129,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "86:0:2"
+            },
+            "scope": 148,
+            "src": "58:1207:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 149,
+        "src": "27:1240:2"
+      }
+    ],
+    "src": "0:1268:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.10+commit.5a6ea5b1.Emscripten.clang"
+  },
+  "networks": {
+    "73799": {
+      "events": {},
+      "links": {},
+      "address": "0xb5C3B7Bd715857463dE2504eA43883fC20C6e786",
+      "transactionHash": "0x2ad1b16b86bda58c2ad57ed52935035f19d28325449e6cd9f89494f2a863d255"
+    }
+  },
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2019-07-26T13:19:40.594Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
