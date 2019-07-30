@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import {fillBlocks} from "./blockfiller"
 import * as yargs from 'yargs'
 
